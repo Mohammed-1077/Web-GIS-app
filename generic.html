@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Statistics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="logo">GIS Project</a>
+				<nav id="nav">
+					<a href="index.html">Home</a>
+					<a href="generic.html">Statistics</a>
+					<a href="gis-practice-openlayers/index.html">Map</a>
+				</nav>
+				<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+			</div>
+		</header>
+
+		<section id="three" class="wrapper">
+			<div class="inner">
+				
+				<header class="align-center">
+					<h2>Statistics</h2>
+					<p>Working area: Canada and part of Greenland </p>
+				</header>
+				<h3>Datasets Resources:</h3>
+				<p>GHS POP: 
+					This spatial raster dataset depicts the distribution and density of population,
+					expressed as the number of people per cell, that represent the whole world.
+				</p>
+				<p>World pop: Spatial raster dataset with the estimated total number of people per 
+					grid-cell, that represent the whole world.
+				</p>
+				<h3>Intercomparison:</h3>
+				<p>is a comparison of the two datasets.</p>
+				<h4>Data set pre-processing:</h4>
+				<ol>
+					<li>•	Clip raster maps.</li>
+					<li>•	Aligned World-Pop raster to the GHS-POP.</li>
+					<li>•	Adjust null values.</li>
+						
+				</ol>
+				<h4>Outputs:</h4>
+				<p>In this step we generate three rasters,
+					GHS-POP and World-POP aligned and clipped to the extent of our tiles,
+					and raster of difference between datasets after aligned and clipped.
+				</p>
+				<h4>Statistics:</h4>
+				<p>We computed the basics statistics of the difference map (GHS-POP-World-POP) 
+					by r.univar function and calculated the correlation matrix between 
+					(GHS-POP-World-POP) by r.covar function for the complete raster,
+					also calculated for each tile.
+				</p>
+				<div class="flex flex-2">
+					<article>
+					<b>•	Univar statistics for differences rasters:</b></br>
+						<table>
+							<tr>
+								<td>Maximum value</td>
+								<td>-3026</td>
+							</tr>
+							<tr>
+								<td>Minimum value</td>
+								<td>3839</td>
+							</tr>
+							<tr>
+								<td>Mean</td>
+								<td>-0.0012</td>
+							</tr>
+							<tr>
+								<td>Mean of absolute value</td>
+								<td>0.3944</td>
+							</tr>
+							<tr>
+								<td>Standers deviation</td>
+								<td>7.4284</td>
+							</tr>
+							<tr>
+								<td>Variance</td>
+								<td>55.1807</td>
+							</tr>
+							<tr>
+								<td>Coefficient of variance</td>
+								<td>-587786.7781</td>
+							</tr>
+						</table>
+					</article>
+					<article>
+						<b>•	Correlation of GHS-POP and World-POP:</b></br>
+						<table>
+							<tr>
+								<td>Number of elements compared(N)</td>
+								<td>22196784</td>
+							</tr>
+							<tr>
+								<td>Correlation</td>
+								<td>0.981640</td>
+							</tr>
+						</table>
+					</article>
+				</div>
+
+				<div class="flex flex-2">
+					<article>
+						<b>•	Correlation for each tile:</b></br>
+						<table>
+							<tr>
+								<th>Tile ID</th>
+								<th>Correlation</th>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>0.972812</td>
+							</tr>
+							<tr>
+								<td>36</td>
+								<td>0.232142</td>
+							</tr>
+							<tr>
+								<td>37</td>
+								<td>0.925651</td>
+							</tr>
+							<tr>
+								<td>38</td>
+								<td>0.912044</td>
+							</tr>
+							<tr>
+								<td>39</td>
+								<td>0.907061</td>
+							</tr>
+							<tr>
+								<td>40</td>
+								<td>0.959147</td>
+							</tr>
+							<tr>
+								<td>41</td>
+								<td>0.909506</td>
+							</tr>
+							<tr>
+								<td>42</td>
+								<td>0.835254</td>
+							</tr>
+							<tr>
+								<td>43</td>
+								<td>0.926008</td>
+							</tr>
+							<tr>
+								<td>44</td>
+								<td>0.904549</td>
+							</tr>
+							<tr>
+								<td>72</td>
+								<td>0.934738</td>
+							</tr>
+							<tr>
+								<td>73</td>
+								<td>0.791802</td>
+							</tr>
+							<tr>
+								<td>74</td>
+								<td>0.572592</td>
+							</tr>
+							<tr>
+								<td>75</td>
+								<td>0.928283</td>
+							</tr>
+							<tr>
+								<td>76</td>
+								<td>0.934104</td>
+							</tr>
+							<tr>
+								<td>77</td>
+								<td>0.967805</td>
+							</tr>
+							<tr>
+								<td>78</td>
+								<td>0.969716</td>
+							</tr>
+							<tr>
+								<td>79</td>
+								<td>0.911005</td>
+							</tr>
+							<tr>
+								<td>80</td>
+								<td>0.902448</td>
+							</tr>
+							<tr>
+								<td>108</td>
+								<td>0.499241</td>
+							</tr>
+							<tr>
+								<td>109</td>
+								<td>0.843254</td>
+							</tr>
+							<tr>
+								<td>112</td>
+								<td>0.943614</td>
+							</tr>
+							<tr>
+								<td>113</td>
+								<td>0.983941</td>
+							</tr>
+							<tr>
+								<td>114</td>
+								<td>0.981225</td>
+							</tr>
+							<tr>
+								<td>115</td>
+								<td>0.978466</td>
+							</tr>
+							<tr>
+								<td>116</td>
+								<td>0.981269</td>
+							</tr>
+						</table>
+					</article>
+					<article>
+						<h3>Validation:</h3>
+						<p>	
+							We are using cross validation for our data because we have a large data, for applying validation for our datasets, we pre-process it to:<br>
+							•	obtain a thematic map with the value (2) that represent(populated) and value (zero) that represent (not populated). Then compute the difference between GHS-POP and World-Pop that get following scenario:<br>
+							-	Value 0 means GHS not populated (built), but Word-Pop populated (built).<br>
+							-	Value 1 means GHS and Word-Pop either both populated (built) or unpopulated (not built).<br>
+							-	Value 2 means Word-Pop not populated (not built), but GHS populated (built).<br>
+							•	Generate 600 samples with QGIS AcATaMa plugin were classified by QuickMapService plugin (Google satellite, Bing satellite, i.e.) used as reference of validation.<br>
+							Finally, we generate accuracy statistics for both GHS POP and World-POP classified and the error matrix by using a python script.<br>
+						</p>
+						<p>
+							<b>Sampling:</b><br>
+							Preformed by QGIS AcATaMa plugin, we Stratified random sampling scheme using difference raster for stratification, distance between sample points  0.08 deg , and generate 600 samples that distributed as follow:<br>
+							-	33% of points where GHS not populated, but Word-Pop populated<br>
+							-	34% of points where GHS and Word-Pop either both populated or<br>
+									unpopulated.<br>
+							-	33% of points where Word-Pop not populated, but GHS populated.<br>
+						</p>
+						<p>
+							<b>Outputs:</b><br>
+							-	Reclassified GHS-POP and World-Pop in GeoTiff format.<br>
+							-	Map of differences (GHS-POP – World-Pop).<br>
+							-	Error matrices and associated accuracy indexes for GHS-POP and for World-Pop validation.<br>
+							-	Vector layer of classified sampling points.<br>
+						</p>
+						<p>
+							<b>Accuracy indexes are:</b><br>
+							-	Overall accuracy (OA) is proportion of correctly classified pixels in total number of pixels.<br>
+							-	User’s accuracy (UA) of a class shows how often a user of thematic raster can expect to find the class on the ground.<br>
+							-	Producer’s accuracy (PA) of a class is probability that the class present on the ground is also captured by classification in the thematic raster.<br>
+						</p>
+						<p>
+							<b>Statistics:</b><br>
+							Error matrices and accuracy indices for GHS-POP and World-POP thematic rasters.<br>
+							•	GHS-POP validation:<br>
+
+							Overall Accuracy: 68.15<br>
+
+							•	World-POP validation:<br>
+							<b>Error matrix:</b><br>
+						</p>
+						<table>
+							<tr>
+								<th>Class</th>
+								<th>1(classified)</th>
+								<th>2(classified)</th>
+							</tr>
+							<tr>
+								<td>1(World-POP class)</td>
+								<td>306</td>
+								<td>88</td>
+							</tr>
+							<tr>
+								<td>2(World-POP class)</td>
+								<td>83</td>
+								<td>123</td>
+							</tr>
+						</table>
+						<b>Accuracy indices:</b>
+						<table>
+							<tr>
+								<th>Class</th>
+								<th>User`s accuracy</th>
+								<th>Producer accuracy</th>
+							</tr>
+							<tr>
+								<td>1/ not populated</td>
+								<td>0.78/td>
+								<td>0.79</td>
+							</tr>
+							<tr>
+								<td>2/ populated</td>
+								<td>0.6</td>
+								<td>0.58</td>
+							</tr>
+						</table>
+						<b>Overall Accuracy: 71.5</b>
+						<br>
+						<br>
+					</article>
+					<p>
+						<b>Conclusion:</b><br>
+						As we see, these indices defines the concept of accuracy from different aspects, each one of them represents a unique point of view, but after all they are all following the same theme of assessment. 
+In reality based on our reference data (satellite images). 
+According to this significant difference, the GHS data has an overall accuracy of 68.51, where the worldpop data has overall accuracy of 71.5.
+Despite the fact that these accuracies are not reasonably representative of what we have in reality, the worldpop data has more accuracy than the data comes from the GHS, which gives the advantage for worldpop data in this intercomparison.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<div class="flex">
+					<div class="copyright">
+						&copy; <a href="https://www.geoinformatics.polimi.it/">Politecnico di milano</a>.
+					</div>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
